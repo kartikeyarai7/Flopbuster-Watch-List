@@ -1,0 +1,10 @@
+<h4>Flopbuster Watch List</h4>
+
+<div *ngFor="let item of watchList | slice: 0 : maxItems; first as f; last as l;index as i">
+
+  <my-watch-list-item [item]="item" [f]="f" [l]="l" (up)="moveItemUp(i)" (down)="moveItemDown(i)">
+  </my-watch-list-item>
+
+</div>
+
+<button class="btn btn-warning" *ngIf="isShowing" (click)="removeCondition()" >Show All</button>

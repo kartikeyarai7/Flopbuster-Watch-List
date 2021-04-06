@@ -1,0 +1,12 @@
+<div style="display:flex; justify-content:space-between" class="text-light p-3 rounded mb-2"
+  [class.bg-success]="item.onSale" [class.bg-dark]="!item.onSale">
+
+  <div>
+    <div>{{item.title}}</div>
+    <div>{{item.price | currency }} {{ item.dateAdded | date}}</div>
+  </div>
+  <div>
+    <i class="material-icons" *ngIf="!f" (click)="moveUp()"  >expand_less</i>
+    <i class="material-icons" *ngIf="!l" (click)="moveDown()" >expand_more</i>
+  </div>
+</div>
